@@ -90,25 +90,29 @@
 - npm install
 #### 주요 패키지 설치 내역
 - 프로젝트에 필요한 주요 패키지들을 명시적으로 설치합니다.
-### 코어 패키지
-- npm install react@18.3.1 react-dom@18.3.1
-- npm install @reduxjs/toolkit@2.3.0 react-redux@9.1.2
-- npm install @tanstack/react-query@5.59.19
-- npm install react-router-dom@6.27.0
-- npm install axios@1.7.7
-- npm install framer-motion@11.11.17
-- npm install @react-oauth/kakao@2.0.1
+### 개별 명령어로 설치
+##### FontAwesome
+- npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+##### Redux Toolkit
+- npm install @reduxjs/toolkit
+##### React Query
+- npm install @tanstack/react-query @tanstack/react-query-devtools
+##### Testing Libraries
+- npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event
+##### 기타 주요 라이브러리
+- npm install axios cross-env env-cmd framer-motion react react-dom react-dotenv react-lazy-load-image-component react-redux react-router-dom react-scripts react-toastify web-vitals
 
-### UI 관련 패키지
+##### DevDependencies
+- npm install @babel/plugin-proposal-private-property-in-object --save-dev
 
-- npm install @fortawesome/fontawesome-svg-core@6.6.0
-- npm install @fortawesome/free-solid-svg-icons@6.6.0
-- npm install @fortawesome/react-fontawesome@0.2.2
-- npm install react-lazy-load-image-component@1.6.2
-- npm install react-toastify@10.0.6
+### 최종 정리
 
-### 개발 도구
-- npm install -D @babel/plugin-proposal-private-property-in-object@7.21.11
+#### 프로젝트 의존성 설치
+- npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome @reduxjs/toolkit @tanstack/react-query @tanstack/react-query-devtools @testing-library/jest-dom @testing-library/react @testing-library/user-event axios cross-env env-cmd framer-motion react react-dom react-dotenv react-lazy-load-image-component react-redux react-router-dom react-scripts react-toastify web-vitals
+
+#### 개발 의존성 설치
+- npm install @babel/plugin-proposal-private-property-in-object --save-dev
+
 ### 개발 서버 실행 (http://localhost:3000)
 npm run start:dev
 
