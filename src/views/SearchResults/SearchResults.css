@@ -1,0 +1,35 @@
+/* src/views/SearchResults/SearchResults.css */
+
+.search-results {
+  padding: 20px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.search-results h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.load-more {
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .search-results h2 {
+    font-size: 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+}

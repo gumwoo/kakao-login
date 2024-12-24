@@ -1,0 +1,235 @@
+/* src/components/Banner/Banner.css*/
+
+.banner {
+    height: 70vh;  /* 80vh에서 70vh로 줄임 */
+    max-width: 100vw;  /* 95vw에서 100vw로 변경 */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 70px; /* 50px에서 70px로 증가 */
+    position: relative;
+    margin-bottom: 0; /* 마진 제거 */
+    z-index: 1;
+    padding-top: 60px; /* 추가: 헤더 높이만큼 패딩 추가 */
+  }
+  
+  .banner-content {
+    padding: 20px; /* 상단 패딩 증가 */
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 20%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.6) 60%,
+      rgba(0, 0, 0, 0.8) 80%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+  }
+
+  .banner::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* 경계선 제거 */
+    left: 0;
+    right: 0;
+    height: 150px;
+    display: none; /* 배경 제거 */
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      #141414 100%
+    );
+    z-index: 1;
+  }
+  
+  .banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .banner p {
+    font-size: 1.2rem;
+    max-width: 800px; /* 더 넓은 텍스트 영역 */
+    margin-bottom: 2rem;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    color: #ffffff;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  
+  .play-btn, .info-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-shadow: none;
+  }
+  
+  .play-btn {
+    background-color: white;
+    color: black;
+  }
+  
+  .info-btn {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+  }
+  
+  .title-btn {
+    margin-top: 5px;
+    width: 150px;
+  }
+  
+  @media screen and (max-height: 768px) {
+    .banner h1 {
+      height: auto;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .banner-content {
+      padding: 15px;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.8) 80%,
+        rgba(0, 0, 0, 0.95) 100%
+      );
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .banner p {
+      font-size: 0.9rem;
+      max-width: 500px;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+  
+    .title-btn {
+      margin-top: 5px;
+      width: 100px;
+      font-size: 0.75rem;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    .banner {
+      height: 80vh;
+    }
+    
+    .banner-content {
+      padding: 30px;
+    }
+  }
+  
+  @media screen and (orientation: portrait) {
+    .banner {
+      height: 50vh;
+    }
+    
+    .banner h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-height: 500px) and (orientation: landscape) {
+    .banner {
+      height: 90vh;
+    }
+    
+    .banner-content {
+      padding: 15px;
+    }
+    
+    .title-btn {
+      width: 80px;
+      font-size: 0.7rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .banner {
+      height: 60vh;
+    }
+
+    .banner-content {
+      padding: 40px 20px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .banner {
+      height: 50vh;
+      margin-top: 80px; /* 60px에서 80px로 증가 */
+      padding-top: 50px; /* 모바일에서 패딩 조정 */
+    }
+
+    .banner h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    .play-btn, .info-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+
+    .banner::after {
+      height: 100px;
+    }
+
+    .banner-content {
+      padding: 30px 15px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .banner {
+      height: 40vh;
+      margin-top: 70px; /* 추가 */
+      padding-top: 40px; /* 더 작은 화면에서 패딩 감소 */
+    }
+
+    .banner h1 {
+      font-size: 1.5rem;
+    }
+
+    .banner p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .play-btn, .info-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+  }

@@ -1,0 +1,312 @@
+/* src/components/Header/Header.css */
+.app-header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+  
+  .app-header:hover,
+  .app-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+  }
+  
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-right: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-right: 15px;
+  }
+  
+  .nav-links a {
+    position: relative;
+    overflow: hidden;
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .nav-links a:hover {
+    color: var(--header-text-color);
+    opacity: 0.7;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon-button:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .mobile-menu-button.open {
+    transform: rotate(90deg);
+  }
+  
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #141414;
+    z-index: 1001;
+    transition: right 0.5s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  }
+  
+  .mobile-nav.open {
+    right: 0;
+  }
+  
+  .mobile-nav ul {
+    list-style-type: none;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+  }
+  
+  .mobile-nav li {
+    margin: 20px 0;
+  }
+  
+  .mobile-nav a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .mobile-nav a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .close-button:hover {
+    transform: rotate(90deg);
+  }
+  
+  /* 오버레이 추가 */
+  .mobile-nav.open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .user-info {
+    color: var(--header-text-color);
+    margin-right: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  
+  .logout-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background-color: var(--button-background);
+    border-radius: 4px;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #c11119;
+  }
+  
+  @media (max-width: 1024px) {
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+    
+    .nav-links li {
+      margin-right: 12px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .nav-links a {
+      font-size: 0.85rem;
+    }
+    
+    .nav-links li {
+      margin-right: 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+    }
+  
+    .mobile-nav {
+      display: block;
+    }
+  
+    .icon-button {
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+  
+    a {
+      text-align: left;
+      font-size: 1.15rem !important;
+    }
+
+    .logout-button {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .logout-button span {
+      display: none;  /* 텍스트 숨기기 */
+    }
+
+    .mobile-nav a {
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+
+    .user-info {
+      max-width: 150px;
+      font-size: 0.9rem;
+    }
+  }
+
+@media screen and (max-width: 480px) {
+  .app-header {
+    height: 50px;
+    padding: 8px 3%;
+  }
+
+  .logo {
+    height: 35px;
+    margin-right: 10px;
+  }
+
+  .mobile-nav {
+    width: 85%;
+  }
+
+  .user-info {
+    max-width: 120px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    display: block; /* display: none 제거 */
+  }
+
+  .logout-button {
+    padding: 6px;
+    min-width: 32px;
+    justify-content: center;
+  }
+
+  .mobile-nav a {
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .app-header {
+    padding: 5px 2%;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .logout-button {
+    padding: 4px;
+    min-width: 28px;
+  }
+
+  .mobile-nav a {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+}

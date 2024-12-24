@@ -1,0 +1,125 @@
+/* src/components/MovieCard/MovieCard.css */
+
+.custom-movie-card {
+    position: relative;
+    width: 250px;  /* 200px에서 250px로 증가 */
+    margin: 15px;  /* 10px에서 15px로 여백 증가 */
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .custom-movie-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    z-index: 1;
+  }
+  
+  .custom-movie-poster {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .custom-movie-title {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .custom-wishlist-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .custom-wishlist-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 애니메이션 추가 */
+}
+
+.custom-wishlist-button:hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* 버튼 확대 */
+}
+
+  
+  @media (max-width: 768px) {
+    .custom-movie-card {
+      width: 160px;  /* 120px에서 160px로 증가 */
+      height: 240px; /* 180px에서 240px로 증가 */
+    }
+  
+    .custom-movie-title {
+      font-size: 14px;
+    }
+  
+    .custom-wishlist-button {
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  }
+
+.custom-movie-card.in-wishlist {
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+  position: relative;
+}
+
+.custom-movie-card.in-wishlist::before {
+  content: '❤️';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.custom-wishlist-button.in-wishlist {
+  background-color: #28a745;
+}
+
+@media screen and (max-width: 480px) {
+  .custom-movie-card {
+    width: 140px;
+    height: 210px;
+    margin: 8px;
+  }
+
+  .custom-movie-title {
+    font-size: 12px;
+  }
+
+  .custom-wishlist-button {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .custom-movie-card {
+    width: 120px;
+    height: 180px;
+    margin: 5px;
+  }
+}

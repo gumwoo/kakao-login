@@ -1,0 +1,131 @@
+/* src/styles/global.css */
+
+:root {
+  --background-color: #141414;
+  --text-color: #ffffff;
+  --header-background: rgba(0, 0, 0, 0.9);
+  --header-text-color: #ffffff;
+  --link-color: #646cff;
+  --button-background: #E50914;
+  --button-text-color: #ffffff;
+  /* 추가적인 색상 변수들 */
+  --font-size-base: 16px;
+  --font-size-large: 1.25rem; /* 20px */
+  --font-size-medium: 1rem; /* 16px */
+  --font-size-small: 0.875rem; /* 14px */
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  font-size: var(--font-size-base);
+}
+
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: var(--font-size-medium);
+}
+
+a:hover {
+  color: var(--link-color);
+  opacity: 0.8;
+}
+
+button {
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* 작은 화면에서 기본 폰트 크기 감소 */
+  }
+
+  a {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  button {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px; /* 더욱 작은 화면에서 폰트 크기 감소 */
+  }
+
+  a {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  button {
+    font-size: 0.75rem;
+  }
+}
+
+/* 화면 회전 최적화를 위한 기본 설정 */
+@media screen and (orientation: landscape) {
+  :root {
+    --content-padding: 5vh 5vw;
+    --header-height: 60px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  :root {
+    --content-padding: 3vh 3vw;
+    --header-height: 50px;
+  }
+}
+
+/* 태블릿/모바일 가로 모드 */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    font-size: 14px;
+  }
+  
+  .content-wrapper {
+    padding: var(--content-padding);
+  }
+}
+
+/* 모든 이미지가 반응형으로 표시되도록 설정 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 페이지 전환 애니메이션 */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}

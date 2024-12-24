@@ -1,0 +1,71 @@
+/* src/components/SearchBar/SearchBar.css */
+
+  .search-bar {
+    position: relative; /* 추가: 자동 완성 목록의 위치를 검색 바에 상대적으로 설정하기 위해 */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* 검색창의 최대 너비를 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
+  }
+  
+  .search-bar input {
+    padding: 10px 12px;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    flex: 1; /* 입력창이 최대 공간을 차지하도록 설정 */
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #f40612;
+  }
+  
+  /* 자동 완성 목록 스타일 추가 */
+  .suggestions {
+    position: absolute;
+    top: 100%; /* 검색 바 바로 아래에 위치하도록 설정 */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none; /* 검색 바와의 경계선을 자연스럽게 연결 */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  .suggestions li {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar input {
+      font-size: 14px;
+    }
+  
+    .search-bar button {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+  

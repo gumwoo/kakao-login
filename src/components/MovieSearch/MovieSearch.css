@@ -1,0 +1,177 @@
+/* src/components/MovieSearch/MovieSearch.css */
+
+.movie-search-container {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+
+.movie-search-container form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%; /* 추가 */
+}
+
+.movie-search-container input[type="text"] {
+  flex: 1;
+  min-width: 0; /* 추가 */
+  padding: 12px;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  direction: ltr; /* 수정 */
+  text-align: left; /* 추가 */
+}
+
+.movie-search-container button[type="submit"] {
+  flex: 0 0 auto; /* 이 줄을 추가 */
+  flex-shrink: 0; /* 추가 */
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.suggestions li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.filter-section h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.dropdown-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.custom-select {
+  position: relative;  /* 추가 */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: visible;  /* hidden에서 visible로 변경 */
+  transition: transform 0.2s ease;
+}
+
+.custom-select:hover {
+  transform: translateY(-2px);
+}
+
+.container-search-bar {
+  width: 100%;
+  max-width: 800px; /* 필요에 따라 조정 */
+  margin: 0 auto;   /* 중앙 정렬 */
+}
+
+.select-selected {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 8px; /* 패딩 축소 */
+  border: 1px solid #fff;
+  font-size: 14px; /* 폰트 크기 축소 */
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  top: auto;  /* auto로 변경 */
+  bottom: 100%;  /* 추가: 드롭다운이 위로 열리도록 */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  z-index: 1000;  /* z-index 증가 */
+  margin-bottom: 5px;  /* 추가: 선택박스와의 간격 */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);  /* 그림자 추가 */
+  transform: none !important;  /* 떨림 현상 제거 */
+  max-height: 150px; /* 200px에서 150px로 줄임 */
+  min-width: 120px; /* 최소 너비 설정 */
+  overflow-y: auto; /* 스크롤 가능하도록 */
+}
+
+.select-items div {
+  color: var(--text-color);
+  padding: 6px 8px; /* 패딩 더 축소 */
+  font-size: 12px; /* 폰트 크기 더 축소 */
+  line-height: 1; /* 줄 간격 더 축소 */
+  transition: background-color 0.2s ease;  /* ��드러운 호버 효과 */
+}
+
+.select-items div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.clear-options {
+  min-width: 120px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.clear-options:hover {
+  background-color: rgba(229, 9, 20, 0.8);
+}
+
+@media (max-width: 768px) {
+  .movie-search-container input[type="text"] {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .movie-search-container button[type="submit"] {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .select-selected {
+    font-size: 14px;
+  }
+
+  .clear-options {
+    font-size: 14px;
+  }
+}

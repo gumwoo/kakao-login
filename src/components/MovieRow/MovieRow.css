@@ -1,0 +1,254 @@
+/* src/components/MovieRow/MovieRow.css */
+
+.wishlist-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px;  /* 5px에서 8px로 증가 */
+  border-radius: 50%;
+  font-size: 18px;  /* 12px에서 18px로 증가 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;  /* 추가: 고정 너비 */
+  height: 24px;  /* 추가: 고정 높이 */
+  line-height: 1;  /* 추가: 라인 높이 조정 */
+}
+
+.movie-row {
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent; /* 추가 */
+  z-index: 2; /* 추가 */
+  animation: rowFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.movie-row h2 {
+  text-align: left;
+  margin-left: 30px;
+  color: #fff; /* 추가 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 추가 */
+  position: relative; /* 추가 */
+  z-index: 3; /* 추가 */
+}
+
+.slider-container {
+  position: relative;
+  touch-action: pan-y;
+}
+
+.slider-window {
+  overflow: hidden;
+  margin: 0 40px;
+  padding: 0 1px; /* 마지막 카드 잘림 방지 */
+}
+
+.movie-slider {
+  display: flex;
+  transition: transform 0.3s ease;
+  padding: 20px 0;
+  gap: 20px; /* 카드 간격 일정하게 */
+}
+
+.row-movie-card {
+  flex: 0 0 calc((100% - (5 * 20px)) / 6); /* 6개 카드 + 간격 */
+  max-width: 250px; /* 최대 너비 제한 */
+  margin-right: 0; /* gap으로 대체 */
+  transition: transform 0.3s;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.row-movie-card:hover {
+  transform: scale(1.05);
+}
+
+.row-movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* 더 진한 배경 */
+  color: white;
+  border: none;
+  padding: 40px 15px; /* 터치 영역 증가 */
+  cursor: pointer;
+  z-index: 20; /* 버튼이 항상 위에 오도록 */
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.slider-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-button.left {
+  left: 0;
+}
+
+.slider-button.right {
+  right: 0;
+}
+
+.slider-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .movie-row {
+    margin-bottom: 20px;
+  }
+
+  .movie-card {
+    width: 120px;
+    margin-right: 5px;
+  }
+
+  .movie-slider {
+    padding: 0;
+  }
+
+  .slider-window {
+    margin: 0 10px;
+  }
+
+  .row-movie-card {
+    width: 280px;  /* 250px에서 280px로 증가 */
+  }
+
+  .wishlist-indicator {
+    width: 22px;  /* 약간만 줄임 */
+    height: 22px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .row-movie-card {
+    width: 200px;  /* 160px에서 200px로 증가 */
+  }
+  
+  .slider-window {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .row-movie-card {
+    width: 120px;
+  }
+  
+  .slider-window {
+    margin: 0 20px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .movie-row {
+    margin-bottom: 15px;
+  }
+  
+  .slider-button {
+    padding: 15px 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .row-movie-card {
+    width: 140px;
+    margin-right: 10px;
+  }
+
+  .movie-row h2 {
+    font-size: 1.2rem;
+    margin-left: 15px;
+  }
+
+  .slider-button {
+    padding: 15px 8px;
+    font-size: 12px;
+  }
+
+  .wishlist-indicator {
+    width: 20px;  /* 모바일에서도 적당한 크기 유지 */
+    height: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (hover: none) {
+  .slider-button {
+    display: none;
+  }
+
+  .movie-slider {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .row-movie-card {
+    scroll-snap-align: start;
+  }
+}
+
+/* 반응형 조정 */
+@media (max-width: 1400px) {
+  .row-movie-card {
+    flex: 0 0 calc((100% - (4 * 20px)) / 5); /* 5개 카드 */
+  }
+}
+
+@media (max-width: 1200px) {
+  .row-movie-card {
+    flex: 0 0 calc((100% - (3 * 20px)) / 4); /* 4개 카드 */
+  }
+}
+
+@media (max-width: 900px) {
+  .row-movie-card {
+    flex: 0 0 calc((100% - (2 * 20px)) / 3); /* 3개 카드 */
+  }
+}
+
+@media (max-width: 600px) {
+  .row-movie-card {
+    flex: 0 0 calc((100% - 20px) / 2); /* 2개 카드 */
+  }
+  
+  .movie-slider {
+    gap: 10px; /* 좁은 화면에서는 간격 줄임 */
+  }
+}
+
+/* 애니메이션 수정 */
+@keyframes rowFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: transparent; /* 추가 */
+  }
+}
+
+/* 그림자 효과 제거를 위한 추가 스타일 */
+.movie-row::before {
+  content: none; /* 기존 그림자 효과 제거 */
+}
+
+.movie-row::after {
+  content: none; /* 기존 그림자 효과 제거 */
+}

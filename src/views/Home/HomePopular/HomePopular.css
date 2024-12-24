@@ -1,0 +1,29 @@
+/* src/views/Home/HomePopular/HomePopular.css */
+.popular-container {
+  padding-top: 80px;
+}
+
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn.active {
+  background-color: #E50914;
+}
+
+.toggle-btn:hover {
+  opacity: 0.9;
+}

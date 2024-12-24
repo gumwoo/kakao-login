@@ -1,0 +1,49 @@
+/* src/views/Home/HomeMain/HomeMain.css */
+.home-main {
+  min-height: 100vh;
+  background-color: #141414;
+  padding-bottom: 50px;
+}
+
+.home-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0) 0%,
+    rgba(20, 20, 20, 0.15) 15%,
+    rgba(20, 20, 20, 0.35) 29%,
+    rgba(20, 20, 20, 0.58) 44%,
+    #141414 68%,
+    #141414 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Row Animations */
+@keyframes rowFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movie-row {
+  animation: rowFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.movie-row:nth-child(1) { animation-delay: 0.2s; }
+.movie-row:nth-child(2) { animation-delay: 0.4s; }
+.movie-row:nth-child(3) { animation-delay: 0.6s; }
+.movie-row:nth-child(4) { animation-delay: 0.8s; }
+.movie-row:nth-child(5) { animation-delay: 1.0s; }
