@@ -14,6 +14,7 @@
 - 회원가입 및 로그인 
 - Local Storage를 활용한 세션 관리 
 - 보안된 라우팅 시스템 
+- 카카오 소셜 로그인 연동
 
 ### 홈 페이지 🏠
 - 동적 배너 표시
@@ -64,12 +65,18 @@
    - Props를 통한 데이터 전달
    - Event Handling을 통한 상호작용
 
-2. **상태 관리**
+2. **소셜 로그인 구현**
+   - Kakao OAuth 2.0 인증 시스템 통합
+   - REST API 기반 카카오 로그인 구현
+   - 사용자 프로필 정보 연동
+   - 로그인 상태 유지 및 토큰 관리
+
+3. **상태 관리**
    - Redux를 통한 전역 상태 관리
    - React Query를 통한 서버 상태 관리
    - Local Storage를 통한 영구 데이터 저장
 
-3. **성능 최적화**
+4. **성능 최적화**
    - 이미지 최적화
    - 무한 스크롤 구현
    - 조건부 렌더링
@@ -90,6 +97,7 @@
 - npm install react-router-dom@6.27.0
 - npm install axios@1.7.7
 - npm install framer-motion@11.11.17
+- npm install @react-oauth/kakao@2.0.1
 
 ### UI 관련 패키지
 
@@ -101,8 +109,8 @@
 
 ### 개발 도구
 - npm install -D @babel/plugin-proposal-private-property-in-object@7.21.11
-### 개발 서버 실행 (http://localhost:3001)
-npm start
+### 개발 서버 실행 (http://localhost:3000)
+npm run start:dev
 
 ### 온라인 데모
 - 배포된 웹사이트: https://hilarious-lolly-e4a1fe.netlify.app/
