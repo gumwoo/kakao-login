@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start:dev": "react-dotenv && cross-env NODE_ENV=development env-cmd -f .env-dev react-scripts start",
-    "build:prod": "react-dotenv && cross-env NODE_ENV=production env-cmd -f .env-prod react-scripts build",
+    "build:prod": "react-dotenv && cross-env NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "netlify deploy --prod"

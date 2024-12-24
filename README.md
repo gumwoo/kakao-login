@@ -113,6 +113,6 @@
 npm run start:dev
 
 ### 온라인 데모
-- 배포된 웹사이트: https://hilarious-lolly-e4a1fe.netlify.app/
+- 배포된 웹사이트: https://web4-kakao.netlify.app
 - Netlify를 통한 지속적 배포 구현
 
